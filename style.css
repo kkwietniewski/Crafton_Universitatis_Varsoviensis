@@ -25,16 +25,21 @@
 
 
 *{
-  margin: 0 auto;
+  margin: 0;
+  scroll-behavior: smooth;
 }
 .container{
   width: 100%;
   min-height: 100vh;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   flex-direction: row;
 }
 .hero{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   padding-top: 2%;
   background:
   linear-gradient(
@@ -71,18 +76,20 @@
 
 .menu{
   display: flex;
-  max-width: 72%;
-  flex-wrap: wrap;
+  flex-basis: 72%;
+  align-items: center;
+  justify-content: space-evenly;
   flex-direction: row;
+  height: 15%;
 }
 .brand{
   flex-grow: 1;
 }
 .links{
   display: flex;
-  flex-basis: 20%;
-  flex-grow: 1;
+  flex-basis: 60%;
   align-items:center;
+  justify-content: space-evenly;
 }
 a{
   text-decoration: none;
@@ -93,49 +100,56 @@ a:hover{
 }
 .hero-text{
   display: flex;
-  max-width: 72%;
-  padding-top: 35vh;
+  flex-basis: 72%;
+  height: 45%;
   flex-wrap: wrap;
   flex-direction: row;
   align-items: flex-end;
 }
 .hero-text>h1{
   display: flex;
+  flex-direction: column;
   flex-basis: 100%;
   font-size: 47px;
+  color: white;
+  font-weight: 400;
 }
 .hero-text, .menu{
   font-family: 'Muli-ExtraLight';
 }
-.first-hero-text{
-  color: white;
-  font-weight: 400;
-}
-.second-hero-text{
+.hero-text>h1>span{
   color: #00b6dc;
   font-weight: 400;
-  padding-bottom: 3%;
+  text-align: left;
 }
 .hero-btns{
-  max-width: 72%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-basis: 72%;
+  height: 40%;
 }
-.hero-btns button{
+.navigation{
+  flex-basis: 100%;
+}
+.more, .angel{
+  text-align: center;
   font-family: 'Muli-Bold';
   font-size: 11px;
-  padding: 13px 25px 13px 25px;
+  padding: 1% 4% 1% 4%;
   border-radius: 20px;
+  background: white;
+  color: black;
   border: white 2px solid;
+  transition: 0.2s;
   text-transform: uppercase;
   margin-right: 1%;
   cursor: pointer;
 }
-.hero-btns button:hover{
+.more:hover, .angel:hover{
   background: none;
   color: #00b6dc;
   border: #00b6dc 2px solid;
-}
-.navigation{
-  padding-top: 8%;
 }
 .fa-arrow-left, .fa-arrow-right{
   fill: white;
@@ -195,16 +209,16 @@ a:hover{
 .player{
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  flex-basis: 84%;
+  flex-basis: 72%;
   padding: 8% 0% 3%;
 }
 .player .player__text{
-  flex-basis: 30%;
+  flex-basis: 44%;
 }
 .player .player__img{
-  flex-basis: 42%;
+  flex-basis: 52%;
   min-height: 550px;
   height: 100%;
   position: relative;
@@ -212,14 +226,12 @@ a:hover{
 .player__overlay{
   display: flex;
   align-items: center;
-  justify-self: center;
+  justify-content: center;
   background: linear-gradient(
     rgba(0, 0, 0, 0.4), 
     rgba(0, 0, 0, 0.4)
   ), url(./assets/thirdPhoto.png);
   position: absolute;
-  left: 0;
-  top: 0;
   width: 100%;
   height: 100%;
 }
@@ -230,7 +242,7 @@ a:hover{
   background: rgba(22, 156, 178, 0.9);
   box-shadow: 0px 0px 0px 13px rgba(22, 156, 178, 0.2);
   border-radius: 50%;
-  display: block;
+  transition: cubic-bezier(0.18, 0.89, 0.32, 1.28) 0.3s;
 }
 .video__play:after{
   position: relative;
@@ -242,11 +254,15 @@ a:hover{
   font-size: 40px;
   z-index: 1;
 }
+.video__play:hover{
+  box-shadow: 0px 0px 0px 25px rgba(22, 156, 178, 0.2);
+}
 .contact{
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
   flex-basis: 100%;
   padding-top: 3%;
   background: #f5f8fa;
@@ -263,13 +279,15 @@ a:hover{
   flex-wrap: wrap;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
+  flex-basis: 25%;
 }
 .contact__title p:nth-of-type(2){
   color: #7b94a5;
   font-size: 12px;
 }
 .contact__inputs input:nth-of-type(1), input:nth-of-type(2){
-  flex-basis: 48%;
+  flex-basis: 45%;
 }
 .contact__inputs input:nth-of-type(3), textarea:nth-of-type(1){
   flex-basis: 100%;

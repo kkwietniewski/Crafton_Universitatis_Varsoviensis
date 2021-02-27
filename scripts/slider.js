@@ -3,38 +3,33 @@ const slideList = [{
     rgba(0, 0, 0, 0.6), 
     rgba(0, 0, 0, 0.6)), 
   url(./assets/slides/hero_img.png)`,
-  text1: "Będziesz się uczyć z ciekawością.",
-  text2: "Obiecujemy."
+  text: "Będziesz się uczyć z ciekawością.<span>Obiecujemy.</span>"
 },
 {
   img: `linear-gradient(
     rgba(0, 0, 0, 0.7), 
     rgba(0, 0, 0, 0.7)), 
   url(./assets/slides/hero_img.png)`,
-  text1: "Będziesz się uczyć z ciekawością1.",
-  text2: "Obiecujemy."
+  text: "Będziesz się uczyć z ciekawością1.<span>Obiecujemy.</span>"
 },
 {
   img: `linear-gradient(
     rgba(0, 0, 0, 0.8), 
     rgba(0, 0, 0, 0.8)), 
   url(./assets/slides/hero_img.png)`,
-  text1: "Będziesz się uczyć z ciekawością2.",
-  text2: "Obiecujemy."
+  text: "Będziesz się uczyć z ciekawością2.<span>Obiecujemy.</span>"
 },
 {
   img: `linear-gradient(
     rgba(0, 0, 0, 0.9), 
     rgba(0, 0, 0, 0.9)), 
   url(./assets/slides/hero_img.png)`,
-  text1: "Będziesz się uczyć z ciekawością3.",
-  text2: "Obiecujemy."
+  text: "Będziesz się uczyć z ciekawością3.<span>Obiecujemy.</span>"
 }];
 
 const hero = document.querySelector(".hero");
 const dots = [...document.querySelectorAll(".dots span")];
-const firstHeroText = document.querySelector(".first-hero-text");
-const secondHeroText = document.querySelector(".second-hero-text");
+const heroText = document.querySelector(".hero-text>h1");
 
 const time = 2000;
 let active = 0;
@@ -46,8 +41,7 @@ const changeDot = ()=>{
 }
 
 const setHero = ()=>{
-  firstHeroText.textContent = slideList[active].text1;
-  secondHeroText.textContent = slideList[active].text2;
+  heroText.innerHTML = slideList[active].text;
 
   hero.style.paddingTop = "2%";
   hero.style.background = slideList[active].img;
@@ -66,7 +60,7 @@ const changeSlide = ()=>{
   changeDot();
 }
 
-// let timeId = setInterval(changeSlide, time);
+let timeId = setInterval(changeSlide, time);
 
 document.querySelectorAll(".navigation a").forEach((arrow, index)=>{
   if(index == 0){
