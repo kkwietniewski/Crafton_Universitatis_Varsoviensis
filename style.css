@@ -151,15 +151,28 @@ a:hover{
   justify-content: center;
   flex-direction: row;
   max-width: 72%;
-  padding: 6% 0% 0% 12%;
+  padding-top: 6%;
 }
-.content__text h1{
+.content__text h1, .player__text h1{
   font-family: "Muli-ExtraBold";
   padding-bottom: 3%;
 }
-.content__text p{
+.content__text p, .player__text p{
   font-family: "Muli-SemiBold";
   padding: 3% 0% 3%;
+  line-height: 2;
+  font-size: 12px;
+  text-align: justify;
+}
+.content__text2{
+  padding: 0% 0% 18% 33%;
+}
+.content__text2 h1{
+  font-family: "Muli-ExtraBold";
+  padding: 30% 0% 6%;
+}
+.content__text2 p{
+  font-family: "Muli-SemiBold";
   line-height: 2;
   font-size: 12px;
   text-align: justify;
@@ -172,4 +185,92 @@ a:hover{
 }
 .content__img > img{
   flex-grow: 1;
+}
+.content__img2 img:first-of-type{
+  position: absolute;
+}
+.badge{
+  position: relative;
+}
+.player{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 84%;
+  padding: 8% 0% 3%;
+}
+.player .player__text{
+  flex-basis: 30%;
+}
+.player .player__img{
+  flex-basis: 42%;
+  min-height: 550px;
+  height: 100%;
+  position: relative;
+}
+.player__overlay{
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.4), 
+    rgba(0, 0, 0, 0.4)
+  ), url(./assets/thirdPhoto.png);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.video__play{
+  position: relative;
+  width: 80px;
+  height: 80px;
+  background: rgba(22, 156, 178, 0.9);
+  box-shadow: 0px 0px 0px 13px rgba(22, 156, 178, 0.2);
+  border-radius: 50%;
+  display: block;
+}
+.video__play:after{
+  position: relative;
+  content: "\25BA";
+  color: rgb(22, 156, 178);
+  -webkit-text-stroke: 2px black;
+  left: 31%;
+  top: 23%;
+  font-size: 40px;
+  z-index: 1;
+}
+.contact{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  flex-basis: 100%;
+  padding-top: 3%;
+  background: #f5f8fa;
+  font-family: "Muli-Bold";
+}
+.contact__title{
+  flex-basis: 100%;
+  text-align: center;
+  line-height: 2;
+  font-size: 14px;
+}
+.contact__inputs{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+}
+.contact__title p:nth-of-type(2){
+  color: #7b94a5;
+  font-size: 12px;
+}
+.contact__inputs input:nth-of-type(1), input:nth-of-type(2){
+  flex-basis: 48%;
+}
+.contact__inputs input:nth-of-type(3), textarea:nth-of-type(1){
+  flex-basis: 100%;
 }
