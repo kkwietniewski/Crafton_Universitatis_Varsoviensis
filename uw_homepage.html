@@ -91,17 +91,94 @@
           <p>Skorzystaj z formularza.</p>
         </div>
         <div class="contact__inputs">
-          <input type="text" placeholder="Imię">
-          <input type="text" placeholder="Nazwisko">
-          <input type="text" placeholder="Adres e-mail">
-          <textarea name="" id="" cols="30" rows="10" placeholder="Treść wiadomości"></textarea>
-          <input type="checkbox" name="" id="">
+            <form action="">
+              <div>
+                <input type="text" name="Name" required>
+                <label for="Name">Imię</label>
+              </div>
+              <div>
+                <input type="text" name="Surname" required>
+                <label for="Surname">Nazwisko</label>
+              </div>
+              <div>
+                <input type="text" name="Email" required>
+                <label for="Email">Adres e-mail</label>
+              </div>
+              <div>
+                <textarea name="Message" id="message" cols="30" rows="10" required></textarea>
+                <label for="Message">Treść wiadomości</label>
+              </div>
+              <div class="rodo">
+                <input type="checkbox" name="rodo" id="rodo">
+                <label for="rodo">Wyrażam zgodę na przetwarzanie moich danych osobowych w rozumieniu ustawy z dnia 29 sierpnia 1997 roku o ochronie danych osobowych oraz ustawy z dnia 16 lipca 2004 roku Prawo telekomunikacyjne w celach marketingowych przez Collegium Da Vinci i oświadczam, iż podane przeze mnie danych osobowych jest dobrowolne oraz iż zostałem poinformowany o prawie żądania dostępu do moich danych osobowych, ich zmiany oraz usunięcia.</label>
+              </div>
+              <div class="btnSubmit">
+                <button type="submit">WYŚLIJ</button>
+              </div>
+            </form>
         </div>
       </section>
-      <footer class="footer"></footer>
+      <footer class="footer">
+        <div class="footer__content">
+          <div class="footer__address">
+            <div class="map">
+              <iframe allowfullscreen
+                src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJ-TdtjkVbBEcRZ5vnSObxMAY&key=AIzaSyDDnRibgfm27hPfBiKoL5uJyhxCIqrRtd4&zoom=14"></iframe>
+            </div>
+            <div><p>ul. Głogowska 10</p><p>61-719 Poznań</p><p>tel. 61 27 11 000</p></div>
+          </div>
+          <div class="footer__links">
+            <div class="footer__title">O nas</div>
+            <div class="footer__links">
+              <a href="#">Dlaczego CDV</a>
+              <a href="#">Kadra naukowa</a>
+              <a href="#">Dla mediów</a>
+              <a href="#">Kontakt</a>
+            </div>
+          </div>
+          <div class="footer__links">
+            <div class="footer__title">Dla kandydata</div>
+            <div class="footer__links">
+              <a href="#">Poradnik maturzysty</a>
+              <a href="#">Rektrutacja</a>
+              <a href="#">Kradyt studencki</a>
+              <a href="#">Studia dla cudzoziemców</a>
+            </div>
+          </div>
+          <div class="footer__links">
+            <div class="footer__title">Dla studenta</div>
+            <div class="footer__links">
+              <a href="#">Witrualna uczelnia</a>
+              <a href="#">Stypendia</a>
+              <a href="#">Biuro Karier</a>
+              <a href="#">Studiuj dalej</a>
+            </div>
+          </div>
+          <div class="footer__links">
+            <div class="footer__title">Dla biznesu</div>
+            <div class="footer__links">
+              <a href="#">Współpraca z biznesem</a>
+              <a href="#">EmotionsLAB</a>
+              <a href="#">Wynajem sal</a>
+              <a href="#">Znajdz pracownika</a>
+            </div>
+          </div>
+          <div class="footer__links">
+            <div class="footer__title">Na skróty</div>
+            <div class="footer__links">
+              <a href="#">Aktualności</a>
+              <a href="#">Wydarzenia</a>
+              <a href="#">Konferencje</a>
+              <a href="#">Blog</a>
+            </div>
+          </div>
+          <div class="realization">Projekt i realizacja: Crafton</div>
+        </div>
+      </footer>
   </div>
   <script src="./scripts/slider.js"></script>
   <script src="./scripts/player.js"></script>
   <script src="./scripts/scroll.js"></script>
+  <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDDnRibgfm27hPfBiKoL5uJyhxCIqrRtd4&callback=initMap"></script> -->
 </body>
 </html>
