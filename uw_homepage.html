@@ -11,20 +11,24 @@
 <body>
   <div class="container">
     <div class="hero">
-      <nav class="menu">
-        <div class="brand">
-          <img src="./assets/UW-bialy.png" alt="">
-        </div>
-
-        <div class="links">
-          <a href="#">I stopnia</a>
-          <a href="#">II stopnia</a>
-          <a href="#">Podyplomowe</a>
-          <a href="#">Szkolenia</a>
-          <a href="#">Usługi</a>
-        </div>
-
-      </nav>
+      <div class="wrapper">
+        <nav class="menu">
+          <div class="brand">
+            <img src="./assets/UW-bialy.png" alt="">
+          </div>
+          <div class="links">
+            <a href="#">I stopnia</a>
+            <a href="#">II stopnia</a>
+            <a href="#">Podyplomowe</a>
+            <a href="#">Szkolenia</a>
+            <a href="#">Usługi</a>
+          </div>
+          <div class="mobileLinks">
+            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bars" class="svg-inline--fa fa-bars fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"></path></svg>
+            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="times" class="svg-inline--fa fa-times fa-w-11" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512"><path d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"></path></svg>
+          </div>
+        </nav>
+      </div>
       <section class="hero-text">
         <h1>Będziesz się uczyć z ciekawością.<span>Obiecujemy.</span></h1>
       </section>
@@ -93,29 +97,30 @@
         <div class="contact__inputs">
             <form action="">
               <div>
-                <input type="text" name="Name" required>
-                <label for="Name">Imię</label>
+                <input type="text" id="uname" name="uname" required>
+                <label for="uname">Imię</label>
               </div>
               <div>
-                <input type="text" name="Surname" required>
-                <label for="Surname">Nazwisko</label>
+                <input type="text" id="surname" name="surname" required>
+                <label for="surname">Nazwisko</label>
               </div>
               <div>
-                <input type="text" name="Email" required>
-                <label for="Email">Adres e-mail</label>
+                <input type="text" id="email" name="email" required>
+                <label for="email">Adres e-mail</label>
               </div>
               <div>
-                <textarea name="Message" id="message" cols="30" rows="10" required></textarea>
-                <label for="Message">Treść wiadomości</label>
+                <textarea id="message" name="message" cols="30" rows="10" required></textarea>
+                <label for="message">Treść wiadomości</label>
               </div>
               <div class="rodo">
-                <input type="checkbox" name="rodo" id="rodo">
+                <input type="checkbox" id="rodo" name="rodo">
                 <label for="rodo">Wyrażam zgodę na przetwarzanie moich danych osobowych w rozumieniu ustawy z dnia 29 sierpnia 1997 roku o ochronie danych osobowych oraz ustawy z dnia 16 lipca 2004 roku Prawo telekomunikacyjne w celach marketingowych przez Collegium Da Vinci i oświadczam, iż podane przeze mnie danych osobowych jest dobrowolne oraz iż zostałem poinformowany o prawie żądania dostępu do moich danych osobowych, ich zmiany oraz usunięcia.</label>
               </div>
               <div class="btnSubmit">
-                <button type="submit">WYŚLIJ</button>
+                <a>WYŚLIJ</a>
               </div>
             </form>
+            <p id="serverResponse"></p>
         </div>
       </section>
       <footer class="footer">
@@ -177,8 +182,10 @@
       </footer>
   </div>
   <script src="./scripts/slider.js"></script>
+  <script src="./scripts/stickyMenu.js"></script>
+  <script src="./scripts/mobileMenu.js"></script>
   <script src="./scripts/player.js"></script>
   <script src="./scripts/scroll.js"></script>
-  <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDDnRibgfm27hPfBiKoL5uJyhxCIqrRtd4&callback=initMap"></script> -->
+  <script src="./scripts/formScripts.js"></script>
 </body>
 </html>

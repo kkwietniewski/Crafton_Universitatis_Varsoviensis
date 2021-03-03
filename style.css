@@ -46,18 +46,19 @@
     rgba(0, 0, 0, 0.6), 
     rgba(0, 0, 0, 0.6)
   ), url(./assets/slides/hero_img.png);
-  background-size: 123%;
+  background-size: cover;
   background-repeat: no-repeat;
-  background-position: center left;
+  background-position: center;
   width: 100%;
   height: 100vh;
+  position: relative;
+  transition: .4s;
 }
 .dots{
   position: absolute;
   top: 41vh;
   right: 10vh;
 }
-
 .dots span{
   display: flex;
   flex-direction: column;
@@ -66,21 +67,62 @@
   width: 13px;
   height: 13px;
   border-radius: 50%;
-  cursor: pointer;
 }
 
 .dots span.active{
   background-color: #ffcd19;
   transition: 0.2s;
 }
-
+.wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 15%;
+  position: fixed;
+  z-index: 5;
+  transition: .4s;
+}
 .menu{
   display: flex;
-  flex-basis: 72%;
+  width: 72%;
   align-items: center;
   justify-content: space-evenly;
   flex-direction: row;
-  height: 15%;
+  position: fixed;
+  
+}
+.mobileMenu{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 33%;
+  margin-top: -2%;
+  background: #001927;
+  position: fixed;
+  right: 0;
+  z-index: 4;
+}
+.mobileMenu a{
+  padding-bottom: 5%;
+}
+.fa-bars{
+  fill: white;
+  width: 35px;
+  z-index: 5;
+}
+.fa-times{
+  fill: white;
+  width: 35px;
+  display: none;
+  z-index: 5;
+}
+.scrollMenu{
+  margin-top: -2%;
+  background-color: #001927;
 }
 .brand{
   flex-grow: 1;
@@ -101,7 +143,7 @@ a:hover{
 .hero-text{
   display: flex;
   flex-basis: 72%;
-  height: 45%;
+  height: 60%;
   flex-wrap: wrap;
   flex-direction: row;
   align-items: flex-end;
@@ -162,10 +204,13 @@ a:hover{
 .content{
   display: flex;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: space-between;
   flex-direction: row;
-  max-width: 72%;
+  flex-basis: 72%;
   padding-top: 6%;
+}
+.content__text{
+  flex-basis: 44%;
 }
 .content__text h1, .player__text h1{
   font-family: "Muli-ExtraBold";
@@ -178,8 +223,14 @@ a:hover{
   font-size: 12px;
   text-align: justify;
 }
+.content__img{
+  flex-basis: 52%;
+}
+.content__img img{
+  width: 100%;
+}
 .content__text2{
-  padding: 0% 0% 18% 33%;
+  flex-basis: 52%;
 }
 .content__text2 h1{
   font-family: "Muli-ExtraBold";
@@ -194,17 +245,18 @@ a:hover{
 .requirements:before{
   content: "\2192";
 }
-.content__img{
-  padding-left: 5%;
-}
-.content__img > img{
-  flex-grow: 1;
+.content__img2{
+  position: relative;
+  flex-basis: 44%;
 }
 .content__img2 img:first-of-type{
+  width: 100%;
   position: absolute;
+  z-index: 2;
 }
 .badge{
   position: relative;
+  z-index: 2;
 }
 .player{
   display: flex;
@@ -214,10 +266,10 @@ a:hover{
   flex-basis: 72%;
   padding: 8% 0% 3%;
 }
-.player .player__text{
+.player__text{
   flex-basis: 44%;
 }
-.player .player__img{
+.player__img{
   flex-basis: 52%;
   min-height: 550px;
   height: 100%;
@@ -294,6 +346,7 @@ a:hover{
   margin-bottom: 3vh;
   cursor: pointer;
   border: none;
+  resize: none;
 }
 .contact__inputs div:not(.rodo){
   position: relative;
@@ -323,7 +376,17 @@ a:hover{
   color: #415f72;
   cursor: pointer;
 }
-.contact__inputs form div:nth-of-type(1), form div:nth-of-type(2){
+.errorAlert{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 0, 0, 0.5);
+  text-align: center;
+  font-family: "Muli-Bold";
+  font-size: 12px;
+  padding-bottom: 3vh;
+}
+.contact__inputs form div:nth-of-type(1):not(.rodoAlert), form div:nth-of-type(2){
   display: flex;
   flex-basis: 47%;
 }
@@ -359,7 +422,7 @@ input[type=checkbox]:checked + label:before{
   flex-basis: 100%;
   padding-top: 4vh;
 }
-.btnSubmit button{
+.btnSubmit a{
   font-family: 'Muli-Light';
   border-radius: 25px;
   border: 2px solid #00b6dc;
@@ -368,8 +431,9 @@ input[type=checkbox]:checked + label:before{
   background-color: #00b6dc;
   font-size: 12px;
   transition: .2s;
+  cursor: pointer;
 }
-.btnSubmit button:hover{
+.btnSubmit a:hover{
   color: #00b6dc;
   background-color: #f5f8fa;
   border-color: #00b6dc;
@@ -378,20 +442,22 @@ input[type=checkbox]:checked + label:before{
   display: flex;
   flex-basis: 100%;
   justify-content: center;
-  min-height: 250px;
+  min-height: 300px;
   background-color: #001927;
   color: white;
   font-family: 'Muli-ExtraLight';
   font-size: 12px;
+  padding-bottom: 2%;
 }
 .footer__content{
   display: flex;
   line-height: 2em;
+  padding-top: 3%;
   flex-basis: 72%;
   flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  position: relative;
 }
 .map iframe{
   border:0;
@@ -414,8 +480,63 @@ input[type=checkbox]:checked + label:before{
   align-items: flex-start;
 }
 .realization{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-basis: 100%;
   font-family: 'Muli-SemiBold';
-  position: absolute;
-  right: 1%;
-  bottom: 0;
+  height: 5vh;
+}
+@media(max-width:499px){
+  .brand>img{
+    width:25%;
+  }
+  .dots{
+    right: 2vh;
+  }
+  .content{
+    flex-direction: column;
+    align-items: center;
+  }
+  .player{
+    flex-direction: column;
+    align-items: unset;
+  }
+  .contact__inputs form div{
+    flex-basis: 100%!important;
+  }
+  .badge{
+    width:70%
+  }
+}
+@media(max-width:899px){
+  .links{
+    display: none;
+  }
+  .hero-text>h1{
+    font-size: 26px;
+  }
+  .more, .angel{
+    font-size: 8px;
+  }
+  .footer__address{
+    flex-basis: 40%;
+  }
+  .footer__links{
+    flex-basis: 25%;
+  }
+  .content{
+    flex-basis: 93%;
+  }
+  .player{
+    flex-basis: 93%;
+  }
+  .contact__inputs{
+    flex-basis: 80%;
+  }
+}
+@media(min-width:900px){
+.mobileLinks{
+  display: none;
+}
 }

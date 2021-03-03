@@ -45,9 +45,9 @@ const setHero = ()=>{
 
   hero.style.paddingTop = "2%";
   hero.style.background = slideList[active].img;
-  hero.style.backgroundSize = "123%";
+  hero.style.backgroundSize = "cover";
   hero.style.backgroundRepeat = "no-repeat";
-  hero.style.backgroundPosition = "center left";
+  hero.style.backgroundPosition = "center";
   hero.style.width = "100%";
 }
 
